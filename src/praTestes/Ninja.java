@@ -1,6 +1,6 @@
 package praTestes;
 
-public class Ninja implements NinjaSkill{
+public abstract class Ninja implements NinjaSkill{
     String name;
     int age;
     String aldeia;

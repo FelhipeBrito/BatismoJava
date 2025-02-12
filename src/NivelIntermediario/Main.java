@@ -2,13 +2,20 @@ package NivelIntermediario;
 
 public class Main {
     public static void main(String[] args) {
-        Hokages hokage = new Hokages("hokage2");
+        Uzumaki naruto = new Uzumaki();
+        naruto.nome = "Naruto Uzumaki";
+        naruto.aldeia = "Aldeia da folha";
+        naruto.idade = 16;
+        naruto.habilidadeEspecial();
 
-        hokage.nome = "hello world";
-        hokage.idade = 78;
+        Uchiha sasuke = new Uchiha("Sasuke Uchiha","Aldeia da Folha",17,20,NivelNinja.GENIN);
+        sasuke.habilidadeEspecial();
 
-        System.out.println(hokage.nome);
-        System.out.println(hokage.idade);
+        Uchiha madara = new Uchiha("Madara Uchiha","Aldeia da Folha",45,900,NivelNinja.KAGE);
+
+        madara.habilidadeEspecial();
+
+
 
     }
 

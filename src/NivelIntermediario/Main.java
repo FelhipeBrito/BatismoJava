@@ -2,6 +2,7 @@ package NivelIntermediario;
 
 public class Main {
     public static void main(String[] args) {
+
         Uzumaki naruto = new Uzumaki();
         naruto.nome = "Naruto Uzumaki";
         naruto.aldeia = "Aldeia da folha";
@@ -15,8 +16,9 @@ public class Main {
 
         madara.habilidadeEspecial();
 
-
-
+        madara.inteligenciaDeCombate();
+        madara.inteligenciaDeCombate(180);
+        madara.meotdoProvisorio();
     }
 
 }

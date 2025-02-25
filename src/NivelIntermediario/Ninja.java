@@ -6,12 +6,19 @@ public class Ninja implements EstrategiaDeBatalha{
     int idade;
     int numeroDeMissoesConcluidas;
     NivelNinja rank;
+    final double altura = 2.10;
 
     //TODO: Inlcuir 2 novos atributos: numeroDeMissoesConcluidas, rank
     //TODO: Rank: GENIN,CHUUNIN,JOUNNIN,KAGE
 
     public Ninja(){
     }
+
+    //todo ninja vai fazer
+    final void tacarKunai(){
+        System.out.println("Eu sou um método da classe mãe!");
+    }
+
     public Ninja(String nome,String aldeia,int idade){
         this.nome = nome;
         this.aldeia = aldeia;

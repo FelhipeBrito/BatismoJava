@@ -1,6 +1,6 @@
 package NivelIntermediario;
 
-public class Uchiha extends Ninja {
+public class Uchiha extends Ninja implements SharinganInterface{
 
     public Uchiha(){
     }
@@ -32,5 +32,10 @@ public class Uchiha extends Ninja {
         }else {
             System.out.println("Seu QI é: "+ qi + " e voce precisa treinar mais suas habilidades!");
         }
+    }
+
+    @Override
+    public void sharinganAtivado() {
+        System.out.println(nome + ": Ativou o Sharingan");
     }
 }

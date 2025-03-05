@@ -1,106 +1,106 @@
 package praTestes;
 
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        int op = 0;
-        int contPares = 0;
-        int contImpar = 0;
+        String[] nomeNinjaArray = new String[3];
 
-        System.out.println("Pares ou impares!");
-        System.out.print("Digite um número inteiro:");
+        System.out.println("---------Array----------");
+        nomeNinjaArray[0] = "Naruto Uzumaki";
+        nomeNinjaArray[1] = "Sasuke Uchiha";
+        nomeNinjaArray[2] = "Sakura Haruno";
+        System.out.println(nomeNinjaArray);
+        System.out.println(nomeNinjaArray[0]);
 
-        try {
-            op = scanner.nextInt();
-        }catch (Exception e){
-            System.out.println("Somente números inteiros!");
+        System.out.println("---------Lista----------");
+        List<String> nomeNinjaList = new ArrayList<>();
+
+        nomeNinjaList.add("Naruto Uzumaki");
+        nomeNinjaList.add("Sasuke Uchiha");
+        nomeNinjaList.add("Sakura Haruno");
+        System.out.println(nomeNinjaList);
+
+        System.out.println("---------Stack----------");
+        Stack<String> nomeNinjaStack = new Stack<>();
+        nomeNinjaStack.push("Naruto Uzumaki");
+        nomeNinjaStack.push("Sasuke Uchiha");
+        nomeNinjaStack.push("Sakura Haruno");
+        System.out.println(nomeNinjaStack);
+
+        System.out.println("---------Queue----------");
+
+        Queue<String> nomeNinjaQueue = new LinkedList<>();
+
+        nomeNinjaQueue.add("Naruto Uzumaki");
+        nomeNinjaQueue.add("Sasuke Uchiha");
+        nomeNinjaQueue.add("Sakura Haruno");
+
+        System.out.println(nomeNinjaQueue);
+
+        LinkedList<String> linkedList = new LinkedList<>();
+
+        linkedList.add("meusZovo");
+        System.out.println(linkedList);
+        linkedList.add("cauraulho");
+        System.out.println(linkedList);
+        linkedList.pop();
+        System.out.println(linkedList);
+        linkedList.push("hello ");
+        System.out.println(linkedList);
+        linkedList.push("one");
+        linkedList.push("two");
+        linkedList.push("three");
+        System.out.println(linkedList);
+        linkedList.poll();
+        System.out.println(linkedList);
+        System.out.println(linkedList.peek());
+
+        HashSet<String> aldeias = new HashSet<>();
+
+        // Adicionando aldeias
+        aldeias.add("Konoha");
+        aldeias.add("Suna");
+        aldeias.add("Kiri");
+        aldeias.add("Konoha"); // Tentativa de duplicata
+
+        // Exibindo as aldeias
+        System.out.println("Aldeias participantes:");
+        for (String aldeia : aldeias) {
+            System.out.println(aldeia);
         }
 
-        int[] numeros = new int[op];
+        // Verificando se uma aldeia está presente
+        System.out.println("Konoha está no torneio? " + aldeias.contains("Konoha"));
 
-        List<Integer> pares = new ArrayList<>();
-        List<Integer> impares = new ArrayList<>();
+        // Removendo uma aldeia
+        aldeias.remove("Kiri");
+        System.out.println("Após remover Kiri: " + aldeias);
 
-        for (int i = 0; i < numeros.length; i++) {
-            numeros[i] = i;
-            if (numeros[i] % 2 == 0){
-                contPares++;
-                pares.add(numeros[i]);
-            }else {
-                contImpar++;
-                impares.add(numeros[i]);
-            }
-        }
-        System.out.println("Pares: " + contPares);
-        for (int num:pares){
-            System.out.print(" - " + num);
-        }
-        System.out.println();
-        System.out.println("Impares: "+ contImpar);
-        for (int num:impares){
-            System.out.print(" - " + num);
-        }
-        /*
-        * GPT CODE
-        *
-        * package praTestes;
+        // LinkedHashSet: Ordem de inserção
+        LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>();
+        linkedHashSet.add("Naruto");
+        linkedHashSet.add("Sasuke");
+        linkedHashSet.add("Sakura");
+        linkedHashSet.add("Kakashi");
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+        System.out.println("LinkedHashSet (Ordem de Inserção):");
+        System.out.println(linkedHashSet);
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int op = 0;
+        // TreeSet: Ordem natural
+        TreeSet<String> treeSet = new TreeSet<>();
+        treeSet.add("Naruto");
+        treeSet.add("Sasuke");
+        treeSet.add("Sakura");
+        treeSet.add("zoio");
+        treeSet.add("Kakashi");
 
-        System.out.println("Pares ou Ímpares!");
-        System.out.print("Digite um número inteiro positivo: ");
-
-        // Verifica se o usuário digitou um número válido
-        if (scanner.hasNextInt()) {
-            op = scanner.nextInt();
-
-            // Verifica se o número é positivo
-            if (op <= 0) {
-                System.out.println("Por favor, digite um número inteiro positivo.");
-            } else {
-                List<Integer> pares = new ArrayList<>();
-                List<Integer> impares = new ArrayList<>();
-
-                // Percorre os números de 1 até op
-                for (int i = 1; i <= op; i++) {
-                    if (i % 2 == 0) {
-                        pares.add(i);
-                    } else {
-                        impares.add(i);
-                    }
-                }
-
-                // Exibe os resultados formatados
-                System.out.println("\nTotal de números pares: " + pares.size());
-                System.out.println("Pares: " + pares);
-
-                System.out.println("\nTotal de números ímpares: " + impares.size());
-                System.out.println("Ímpares: " + impares);
-            }
-        } else {
-            System.out.println("Erro! Somente números inteiros são permitidos.");
-        }
-
-        scanner.close();
-    }
-}
-*/
+        System.out.println("\nTreeSet (Ordem Natural):");
+        System.out.println(treeSet);
 
 
-       scanner.close();
+
 
 
     }
